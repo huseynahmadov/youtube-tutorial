@@ -1,0 +1,40 @@
+databaseChangeLog:
+  - changeSet:
+      id: create payments table
+      author: huseynahmadov
+      changes:
+        - createTable:
+            tableName: payments
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: order_id
+                  type: bigint
+              - column:
+                  name: payment_type
+                  type: varchar(16)
+              - column:
+                  name: reference_number
+                  type: varchar(64)
+              - column:
+                  name: status
+                  type: varchar(16)
+              - column:
+                  name: amount
+                  type: decimal(16,2)
+              - column:
+                  name: created_at
+                  type: timestamp
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated_at
+                  type: timestamp
+                  constraints:
+                    nullable: false
